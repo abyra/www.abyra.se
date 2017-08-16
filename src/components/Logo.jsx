@@ -1,6 +1,14 @@
 import React from "react";
+import logotype from "../images/logo.png";
+import { Image } from "semantic-ui-react";
+import styled from "styled-components";
+import omit from "lodash/omit";
 
-const Logo = props =>
-    <img src="http://res.cloudinary.com/abyra-se/image/upload/logo.png" />;
+const Logo = styled(props => <Image {...omit(props, Logo.OmitProps)} />)`
+    ${props => props.small && "width: 180px;"}
+    ${props => props.large && "width: 240px;"}
+`;
 
-export default Logo;
+Logo.OmitProps = ["small", "large"];
+
+export default props => <Logo {...props} src={logotype} />;

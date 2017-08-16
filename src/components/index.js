@@ -1,9 +1,8 @@
-//import MainNavigation from "./MainNavigation";
 import Logo from "./Logo";
-import Card from "./Card";
 import Page from "./Page";
 import Text from "./Text";
-import CompactNavigation from "./CompactNavigation";
-import List from "./List";
+import SiteFooter from "./SiteFooter";
+import SiteHeader from "./SiteHeader";
+import FlexBox from "./FlexBox";
 
-export { Logo, Card, Page, Text, CompactNavigation, List };
+export { Logo, Page, Text, SiteHeader, SiteFooter, FlexBox };

@@ -1,42 +1,52 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-export default class HTML extends React.Component {
+let stylesStr;
+if (process.env.NODE_ENV === `production`) {
+    try {
+        stylesStr = require(`!raw-loader!../public/styles.css`);
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+module.exports = class HTML extends React.Component {
     render() {
         let css;
-        if (process.env.NODE_ENV === "production") {
+        if (process.env.NODE_ENV === `production`) {
             css = (
                 <style
-                    dangerouslySetInnerHTML={{
-                        __html: require("!raw!../public/styles.css")
-                    }}
+                    id="gatsby-inlined-css"
+                    dangerouslySetInnerHTML={{ __html: stylesStr }}
                 />
             );
         }
-
         return (
             <html lang="sv">
                 <head>
-                    {this.props.headComponents}
                     <meta charSet="utf-8" />
-                    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+                    <meta httpEquiv="x-ua-compatible" content="ie=edge" />
                     <meta
                         name="viewport"
-                        content="width=device-width, initial-scale=1.0"
+                        content="width=device-width, initial-scale=1, shrink-to-fit=no"
                     />
+                    <link
+                        rel="stylesheet"
+                        href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
+                    />
+                    {this.props.headComponents}
                     <link rel="shortcut icon" href="/favicon.ico" />
                     {css}
                 </head>
                 <body>
+                    {this.props.preBodyComponents}
                     <div
+                        key={`body`}
                         id="___gatsby"
-                        dangerouslySetInnerHTML={{
-                            __html: this.props.body
-                        }}
+                        dangerouslySetInnerHTML={{ __html: this.props.body }}
                     />
                     {this.props.postBodyComponents}
                 </body>
             </html>
         );
     }
-}
+};

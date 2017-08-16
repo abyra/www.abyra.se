@@ -1,46 +1,52 @@
-import "semantic-ui-css/semantic.min.css";
 import "../css/abyra.css";
 import React from "react";
-import { CompactNavigation } from "../components";
+import { SiteHeader, SiteFooter } from "../components";
 import styled from "styled-components";
-import { Provider, Image, Flex, Box } from "rebass";
-import logo from "../images/logo.png";
+import { Container } from "semantic-ui-react";
+import Helmet from "react-helmet";
 
-const Header = styled.header`
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
+const Site = styled.div`
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 
-    background-color: #fff;
-`;
+    > main {
+        flex: 1;
+    }
 
-const Container = styled.div`
-    max-width: 1170px;
-    margin-left: auto;
-    margin-right: auto;
+    > footer {
+        margin-top: 1%;
+        display: flex;
+        justify-content: center;
+    }
+
+    > header {
+        margin-bottom: 1%;
+    }
 `;
 
 export default class Template extends React.Component {
     render() {
         return (
-            <Provider>
-                <Header>
-                    <Flex>
-                        <Image src={logo} />
-                        <Box ml="auto">
-                            <CompactNavigation />
-                        </Box>
-                    </Flex>
-                </Header>
-
-                <main>
+            <Site>
+                <Helmet
+                    titleTemplate="%s | Adriansson Advokatbyrå"
+                    defaultTitle="Adriansson Advokatbyrå"
+                />
+                <header>
                     <Container>
-                        {this.props.children()}
+                        <SiteHeader />
                     </Container>
-                </main>
-            </Provider>
+                </header>
+
+                <Container as="main">
+                    {this.props.children()}
+                </Container>
+
+                <footer>
+                    <SiteFooter />
+                </footer>
+            </Site>
         );
     }
 }

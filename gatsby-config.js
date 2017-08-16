@@ -1,15 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: `Adriansson`
+        title: `Adriansson Advokatbyrå AB`
     },
-    plugins: [
-        `gatsby-plugin-react-helmet`,
-        `gatsby-plugin-styled-components`,
-        {
-            resolve: "gatsby-plugin-typography",
-            options: {
-                pathToConfigModule: "src/typography"
-            }
-        }
-    ]
+    plugins: [`gatsby-plugin-react-helmet`, `gatsby-plugin-styled-components`]
 };

@@ -3,26 +3,24 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "cloudinary-react": "^1.0.4",
         "gatsby": "^1.8.4",
         "gatsby-link": "^1.6.7",
         "gatsby-plugin-react-helmet": "^1.0.2",
         "gatsby-plugin-styled-components": "^1.0.2",
-        "gatsby-plugin-typography": "^1.7.3",
+        "lodash": "^4.17.4",
         "react": "^15.6.1",
         "react-dom": "^15.6.1",
         "react-icons": "^2.2.5",
         "react-media": "^1.6.1",
-        "rebass": "^1.0.3",
-        "semantic-ui-css": "^2.2.12",
+        "recompose": "^0.25.0",
         "semantic-ui-react": "^0.71.4",
-        "styled-components": "^2.1.2",
-        "typography-theme-github": "^0.15.10"
+        "styled-components": "^2.1.2"
     },
     "scripts": {
-        "start": "gatsby develop --port=3000",
+        "start": "gatsby develop --port=4000",
         "build": "gatsby build",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "deploy:beta": "rm -rf public/*.html && gatsby build && surge --domain beta.abyra.se public/"
     },
     "devDependencies": {
         "babel-eslint": "7.2.3",
@@ -31,6 +29,7 @@
         "eslint-plugin-flowtype": "2.33.0",
         "eslint-plugin-import": "2.2.0",
         "eslint-plugin-jsx-a11y": "5.0.1",
-        "eslint-plugin-react": "7.0.1"
+        "eslint-plugin-react": "7.0.1",
+        "prop-types": "^15.5.10"
     }
 }
