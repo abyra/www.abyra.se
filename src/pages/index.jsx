@@ -12,7 +12,7 @@ const StartPage = styled.div`
     flex-direction: column;
 
     > * + * {
-        margin-top: 2%;
+        margin-top: 1em;
     }
 `;
 
