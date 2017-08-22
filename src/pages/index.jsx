@@ -17,13 +17,14 @@ const StartPage = styled.div`
 `;
 
 const StartPageHeading = PageHeading.extend`
-    padding-bottom: 50%;
+    padding-bottom: 60%;
     background-image: url(${props => props.bg});
 
     > header {
         > h1 {
             display: inline-block;
             transform: rotateY(180deg) rotateX(180deg);
+            font-size: 2.5em;
         }
     }
 `;
@@ -33,7 +34,7 @@ export default class Index extends React.Component {
         return (
             <StartPage>
                 <PageWrapper>
-                    <StartPageHeading bg="http://res.cloudinary.com/abyra-se/image/upload/f_auto/v1496404440/hemsida/team_adriansson.jpg">
+                    <StartPageHeading bg="http://res.cloudinary.com/abyra-se/image/upload/v1503397720/hemsida/team_adriansson_new.jpg">
                         <header>
                             <h1>Nya Perspektiv</h1>
                         </header>
