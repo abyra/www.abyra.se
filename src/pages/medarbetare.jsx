@@ -79,7 +79,7 @@ const persons = [
         name: "Karl Bertrandt",
         slug: "karl",
         image:
-            "http://res.cloudinary.com/abyra-se/image/upload/s--ghctApEq--/f_auto,q_jpegmini:2/v1503041930/medarbetare/karl.jpg",
+            "http://res.cloudinary.com/abyra-se/image/upload/s--oAMswr7e--/f_auto,q_jpegmini:2/v1503401632/medarbetare/karl.jpg",
         email: "karl@abyra.se",
         phone: "760091662",
         phone_display: "+46 (0) 76-009 16 62",
