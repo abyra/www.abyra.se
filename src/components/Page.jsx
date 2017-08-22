@@ -22,6 +22,7 @@ export const PageHeading = styled.div`
         url(${props => props.bg});
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     height: 0;
     position: relative;
     overflow: hidden;

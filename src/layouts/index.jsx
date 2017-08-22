@@ -31,8 +31,13 @@ export default class Template extends React.Component {
             <Site>
                 <Helmet
                     titleTemplate="%s | Adriansson Advokatbyrå"
-                    defaultTitle="Adriansson Advokatbyrå"
-                />
+                    defaultTitle="Adriansson Advokatbyrå">
+                    <link rel="canonical" href="http://www.abyra.se" />
+                    <meta
+                        name="description"
+                        content="Adriansson Advokatbyrå är en affärsjuridisk byrå med fokus på tvistlösning, bygg- och entreprenadrelaterad juridik och familjerätt."
+                    />
+                </Helmet>
                 <header>
                     <Container>
                         <SiteHeader />
