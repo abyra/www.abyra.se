@@ -11,7 +11,10 @@ export const PageWrapper = styled.div`
     border-radius: 5px;
 `;
 
-export const ContentWrapper = styled.div`padding: 2% 1%;`;
+export const ContentWrapper = ({ children, ...props }) =>
+    <Segment basic padded {...props}>
+        {children}
+    </Segment>;
 
 export const PageHeading = styled.div`
     background: linear-gradient(
@@ -74,7 +77,7 @@ const Page = ({ title, slug, bg, ...props }) =>
 
 const PageSummary = ({ title, slug, ...props }) =>
     <PageWrapper>
-        <Segment basic padded>
+        <ContentWrapper>
             <Header as="h2" dividing>
                 {title}
             </Header>
@@ -82,7 +85,7 @@ const PageSummary = ({ title, slug, ...props }) =>
             <Label ribbon as={Link} to={`/${slug}`} color="blue">
                 Läs mer <Icon name="angle double right" />
             </Label>
-        </Segment>
+        </ContentWrapper>
     </PageWrapper>;
 
 Page.Summary = PageSummary;
