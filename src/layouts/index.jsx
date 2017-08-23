@@ -1,6 +1,6 @@
 import "../css/abyra.css";
 import React from "react";
-import { SiteHeader, SiteFooter } from "../components";
+import { SiteHeader, ContactUs, SocialMediaIcons } from "../components";
 import styled from "styled-components";
 import { Container } from "semantic-ui-react";
 import Helmet from "react-helmet";
@@ -17,7 +17,8 @@ const Site = styled.div`
     > footer {
         margin-top: 1%;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     > header {
@@ -49,7 +50,8 @@ export default class Template extends React.Component {
                 </Container>
 
                 <footer>
-                    <SiteFooter />
+                    <ContactUs size="medium" color="black" circular />
+                    <SocialMediaIcons size="small" circular />
                 </footer>
             </Site>
         );
