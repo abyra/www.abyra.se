@@ -34,7 +34,7 @@ export default class Index extends React.Component {
         return (
             <StartPage>
                 <PageWrapper>
-                    <StartPageHeading bg="http://res.cloudinary.com/abyra-se/image/upload/v1503397720/hemsida/team_adriansson_new.jpg">
+                    <StartPageHeading bg="http://res.cloudinary.com/abyra-se/image/upload/c_scale,f_auto,w_1200/v1503493538/hemsida/team_adriansson.jpg">
                         <header>
                             <h1>Nya Perspektiv</h1>
                         </header>

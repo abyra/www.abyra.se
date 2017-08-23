@@ -17,7 +17,7 @@ const persons = [
         name: "Anders Adriansson",
         slug: "anders",
         image:
-            "https://res.cloudinary.com/abyra-se/image/upload/s--x8QQ6h1X--/f_auto,q_jpegmini:2/v1503043035/medarbetare/anders.jpg",
+            "http://res.cloudinary.com/abyra-se/image/upload/c_scale,f_auto,w_300/v1503492587/medarbetare/anders.jpg",
         email: "anders@abyra.se",
         phone: "706673857",
         phone_display: "+46 (0) 70- 667 38 57",
@@ -34,7 +34,7 @@ const persons = [
         name: "Sebastian Ländin",
         slug: "sebastian",
         image:
-            "http://res.cloudinary.com/abyra-se/image/upload/s--wHUfQgAZ--/f_auto,q_jpegmini:2/v1503043327/medarbetare/sebastian.jpg",
+            "http://res.cloudinary.com/abyra-se/image/upload/c_scale,f_auto,w_300/v1503492804/medarbetare/sebastian.jpg",
         email: "sebastian@abyra.se",
         phone: "706000406",
         phone_display: "+46 (0) 70-600 04 06",
@@ -51,7 +51,7 @@ const persons = [
         name: "Mia Bohlin Adriansson",
         slug: "mia",
         image:
-            "http://res.cloudinary.com/abyra-se/image/upload/s--w4Oi7_rg--/f_auto,q_jpegmini:2/v1503043517/medarbetare/mia.jpg",
+            "http://res.cloudinary.com/abyra-se/image/upload/c_scale,f_auto,w_300/v1503493155/medarbetare/mia.jpg",
         email: "mia@abyra.se",
         phone: "703683857",
         phone_display: "+46 (0) 70- 368 38 57",
@@ -61,7 +61,7 @@ const persons = [
         name: "Jeanette Jacobsson",
         slug: "jeanette",
         image:
-            "http://res.cloudinary.com/abyra-se/image/upload/s--wDLwUCpq--/f_auto,q_jpegmini:2/v1503043633/medarbetare/jeanette.jpg",
+            "http://res.cloudinary.com/abyra-se/image/upload/c_scale,f_auto,w_300/v1503493067/medarbetare/jeanette.jpg",
         email: "jeanette@abyra.se",
         phone: "703414066",
         phone_display: "+46 (0) 70-34 14 066",
@@ -79,7 +79,7 @@ const persons = [
         name: "Karl Bertrandt",
         slug: "karl",
         image:
-            "http://res.cloudinary.com/abyra-se/image/upload/s--oAMswr7e--/f_auto,q_jpegmini:2/v1503401632/medarbetare/karl.jpg",
+            "http://res.cloudinary.com/abyra-se/image/upload/c_scale,f_auto,w_300/v1503492240/medarbetare/karl.jpg",
         email: "karl@abyra.se",
         phone: "760091662",
         phone_display: "+46 (0) 76-009 16 62",
