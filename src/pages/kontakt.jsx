@@ -27,11 +27,9 @@ const Maps = styled.div`
     }
 `;
 
-const Map = ({ src, title }) =>
+const Map = ({ src, title }) => (
     <div className="map">
-        <Header as="h3">
-            {title}
-        </Header>
+        <Header as="h3">{title}</Header>
         <iframe
             title={title}
             src={src}
@@ -39,7 +37,8 @@ const Map = ({ src, title }) =>
             style={{ border: 0, minHeight: "450px", width: "100%" }}
             allowFullScreen
         />
-    </div>;
+    </div>
+);
 
 export default class extends React.Component {
     render() {
@@ -73,7 +72,7 @@ export default class extends React.Component {
                     />
                     <Map
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2034.8050037394828!2d18.06751261596607!3d59.336209317513166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d5ce46b0b11%3A0xe41a297d6c416b8c!2sKungsgatan+8%2C+111+43+Stockholm%2C+Sweden!5e0!3m2!1sen!2sse!4v1491766525523"
-                        title="Mottagningskontor KG8"
+                        title="Mottagningskontor KG10"
                     />
                 </Maps>
             </Page>
