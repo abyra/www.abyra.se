@@ -1,11 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { PageWrapper, PageHeading, ContentWrapper } from "../components/Page";
-import { FlexBox } from "../components";
-import { PageSummary as Page1 } from "../pages/verksamhetsomraden";
+import {
+    PageWrapper,
+    PageHeading,
+    ContentWrapper,
+    PageSummary
+} from "../components/Page";
+import { FlexBox, Box } from "../components";
 import { PageSummary as Page2 } from "../pages/aktuellt";
 import Media from "react-media";
 import { Image } from "semantic-ui-react";
+import { slugify } from "../utils";
 
 const StartPage = styled.div`
     display: flex;
@@ -31,68 +36,76 @@ const StartPageHeading = PageHeading.extend`
 
 export default class Index extends React.Component {
     render() {
+        const { heading, content, pushers } = this.props.data.page;
+
         return (
             <StartPage>
                 <PageWrapper>
-                    <StartPageHeading bg="http://res.cloudinary.com/abyra-se/image/upload/c_scale,f_auto,w_1200/v1503493538/hemsida/team_adriansson.jpg">
+                    <StartPageHeading bg="//images.contentful.com/23egy2u19di5/4mR67VWLJKqgo66OCwGS08/01a3f2f2176a4c90a7e0dae6f2235bab/team_adriansson.jpg?fl=progressive">
                         <header>
-                            <h1>Nya Perspektiv</h1>
+                            <h1>{heading}</h1>
                         </header>
                     </StartPageHeading>
                     <ContentWrapper>
                         <FlexBox>
-                            <div>
-                                <p>
-                                    Att ligga i framkant i en ständigt
-                                    föränderlig bransch kräver ständigt nya
-                                    infallsvinklar, kreativitet och
-                                    innovationsförmåga. En bra advokat söker
-                                    lösningar utanför den traditionella boxen
-                                    och löser problem utan bundenhet till gamla
-                                    vanor.
-                                </p>
-
-                                <p>
-                                    Vi är en modern, prestigelös och kompetent
-                                    advokatbyrå med bred kunskaps- och
-                                    erfarenhetsbas. Vårt upptagningsområde är
-                                    främst Stockholms-, Upplands- och
-                                    Västmanlands län men vi har klienter över
-                                    hela landet. Av denna anledning har
-                                    geografiskt fördelaktiga Knivsta, med dess
-                                    närhet till Arlanda – och därmed hela
-                                    Sverige – valts som bas för vår verksamhet.
-                                    För att hålla en hög servicegrad för våra
-                                    Stockholmsklienter har vi även ett
-                                    mottagningskontor på Kungsgatan 8 i
-                                    Stockholm.
-                                </p>
-
-                                <p>
-                                    Hör av dig till oss så berättar vi mer om
-                                    oss och vår verksamhet.
-                                </p>
-                            </div>
+                            <div
+                                dangerouslySetInnerHTML={{
+                                    __html: content.childMarkdownRemark.html
+                                }}
+                            />
                             <Media query="(min-width: 992px)">
                                 {matches =>
-                                    matches &&
-                                    <FlexBox.Item
-                                        align-self="center"
-                                        padded="left">
-                                        <Image
-                                            src="http://res.cloudinary.com/abyra-se/image/upload/s--2E1PJ1cl--/c_scale,f_auto,h_400,q_jpegmini:2,w_400/v1496404442/hemsida/nya_perspektiv.jpg"
-                                            shape="circular"
-                                            size="big"
-                                        />
-                                    </FlexBox.Item>}
+                                    matches && (
+                                        <FlexBox.Item
+                                            align-self="center"
+                                            ml={2}>
+                                            <Image
+                                                src="//images.contentful.com/23egy2u19di5/1FjK3Gw6rOEGkYwE08Y0ie/148647f6f795b4d0d8eafc7e0bbe5f26/startpage_small.jpg?w=300&h=300&fit=thumb&q=100&fl=progressive"
+                                                shape="circular"
+                                                size="big"
+                                            />
+                                        </FlexBox.Item>
+                                    )}
                             </Media>
                         </FlexBox>
                     </ContentWrapper>
                 </PageWrapper>
 
-                <Page1 />
-                <Page2 />
+                {pushers.map((pusher, index) => (
+                    <PageSummary
+                        key={index}
+                        title={pusher.heading}
+                        slug={slugify(pusher.heading)}>
+                        <Box
+                            pb={2}
+                            dangerouslySetInnerHTML={{
+                                __html: pusher.text.childMarkdownRemark.html
+                            }}
+                        />
+                    </PageSummary>
+                ))}
             </StartPage>
         );
     }
 }
+
+export const qyery = graphql`
+    query IndexPageQuery {
+        page: contentfulStartPage {
+            heading
+            content {
+                childMarkdownRemark {
+                    html
+                }
+            }
+            pushers {
+                heading
+                text {
+                    childMarkdownRemark {
+                        html
+                    }
+                }
+            }
+        }
+    }
+`;

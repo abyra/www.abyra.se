@@ -13,10 +13,14 @@ html {
 
 body {
     background-color: rgba(144, 144, 142, 0.5);
-    background-image: url('//images.contentful.com/23egy2u19di5/4dwti8LATYekmUoEIkekYi/8f88f994f3204caeb7f2a439b89ad185/background.jpg?fl=progressive');
+    background-image: url("//images.contentful.com/23egy2u19di5/4dwti8LATYekmUoEIkekYi/8f88f994f3204caeb7f2a439b89ad185/background.jpg?fl=progressive");
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     font-family: Roboto, Helvetica, sans-serif;
     color: rgb(97, 97, 97);
+}
+
+ul {
+    margin: 0;
 }

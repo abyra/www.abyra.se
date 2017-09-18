@@ -20,7 +20,7 @@
         "styled-system": "^1.0.0-13"
     },
     "scripts": {
-        "start": "gatsby develop --port=4000",
+        "start": "rm -rf .cache/ && gatsby develop --port=4000",
         "build": "gatsby build",
         "reset": "rm -rf .cache/",
         "test": "echo \"Error: no test specified\" && exit 1"
