@@ -1,6 +1,6 @@
-// Place your settings in this file to overwrite default and user settings.
 {
-        "files.exclude": {
+    // Place your settings in this file to overwrite default and user settings.
+    "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
         "**/.hg": true,
@@ -11,5 +11,6 @@
         "**/.cache": true,
         "public": true
     },
-    "eslint.enable": true
+    "eslint.enable": true,
+    "editor.formatOnSave": true
 }

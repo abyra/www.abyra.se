@@ -6,15 +6,16 @@ import Link from "gatsby-link";
 
 export const PageWrapper = styled.div`
     background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12),
-        0 2px 4px -1px rgba(0, 0, 0, .2);
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+        0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 `;
 
-export const ContentWrapper = ({ children, ...props }) =>
+export const ContentWrapper = ({ children, ...props }) => (
     <Segment basic padded {...props}>
         {children}
-    </Segment>;
+    </Segment>
+);
 
 export const PageHeading = styled.div`
     background: linear-gradient(
@@ -56,26 +57,21 @@ export const PageHeading = styled.div`
     }
 `;
 
-const Page = ({ title, slug, bg, ...props }) =>
+const Page = ({ title, slug, bg, ...props }) => (
     <PageWrapper>
         <Helmet>
-            <title>
-                {title}
-            </title>
+            <title>{title}</title>
         </Helmet>
         <PageHeading bg={bg || require(`../images/page_${slug}.jpg`)}>
             <header>
-                <h1>
-                    {title}
-                </h1>
+                <h1>{title}</h1>
             </header>
         </PageHeading>
-        <ContentWrapper>
-            {props.children}
-        </ContentWrapper>
-    </PageWrapper>;
+        <ContentWrapper>{props.children}</ContentWrapper>
+    </PageWrapper>
+);
 
-const PageSummary = ({ title, slug, ...props }) =>
+export const PageSummary = ({ title, slug, ...props }) => (
     <PageWrapper>
         <ContentWrapper>
             <Header as="h2" dividing>
@@ -86,7 +82,8 @@ const PageSummary = ({ title, slug, ...props }) =>
                 Läs mer <Icon name="angle double right" />
             </Label>
         </ContentWrapper>
-    </PageWrapper>;
+    </PageWrapper>
+);
 
 Page.Summary = PageSummary;
 
