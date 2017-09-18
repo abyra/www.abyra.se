@@ -11,7 +11,9 @@ export default class extends React.Component {
         const persons = this.props.data.allContentfulPerson.edges;
 
         return (
-            <Page title="Medarbetare" slug="medarbetare">
+            <Page
+                title="Medarbetare"
+                bg="//images.contentful.com/23egy2u19di5/otSk8Xz6CseK2Quogsk2/7ed97b032b276370523e57c3dc4d40e1/medarbetare.jpg?fl=progressive">
                 <Item.Group divided>
                     {persons.map(({ node: person }, index) => (
                         <Item key={index}>
@@ -65,7 +67,7 @@ export default class extends React.Component {
     }
 }
 
-export const pageQuery = graphql`
+export const query = graphql`
     query MedarbetarPageQuery {
         allContentfulPerson(sort: { fields: [sort_order] }) {
             edges {
