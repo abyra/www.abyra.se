@@ -5,53 +5,30 @@ import { Image } from "semantic-ui-react";
 
 export default class extends React.Component {
     render() {
+        const { heading, content } = this.props.data.page;
+
         return (
-            <Page title="Aktuellt" slug="aktuellt">
+            <Page
+                title={heading}
+                bg="//images.contentful.com/23egy2u19di5/1b9HVy0DYw82QwAcc6K6Cg/2782f7aeab60e11644865c859e54a517/aktuellt.jpg?fl=progressive">
                 <FlexBox>
-                    <div>
-                        <p>
-                            Till oss är du alltid välkommen att höra av dig. Den
-                            första kontakten kostar ingenting. Du kan anlita oss
-                            för såväl juridisk konsultation som biträde vid
-                            tvister och avtalsförhandlingar. Därutöver kan vi
-                            hjälpa dig med upprättande av avtal, testamenten,
-                            äktenskapsförord och andra rättshandlingar.
-                        </p>
+                    <div
+                        dangerouslySetInnerHTML={{
+                            __html: content.childMarkdownRemark.html
+                        }}
+                    />
 
-                        <p>
-                            De flesta hem- och företagsförsäkringar omfattar ett
-                            så kallat rättsskydd. Rättsskydd innebär att
-                            försäkringsbolaget betalar viss del av dina eller
-                            ditt företags rättegångskostnader om du hamnar i
-                            tvist. Hur stor del som försäkringsbolaget ersätter
-                            framgår av försäkringsvillkoren.
-                        </p>
-
-                        <p>
-                            För privatpersoner varierar rättsskyddsbeloppet
-                            normalt mellan 75-80 % av den s k rättshjälpstaxan.
-                            Rättshjälpstaxan är en taxa domstolsverket årligen
-                            fastställer. För 2016 uppgår rättshjälpstaxan till 1
-                            323 kr per timme exklusive moms.
-                        </p>
-
-                        <p>
-                            För företag varierar rättsskyddsbeloppet normalt
-                            mellan 75-80 % av ombudsarvodet exklusive moms. De
-                            flesta försäkringsbolag har en grundsjälvrisk som
-                            varierar mellan ca 7 000 kr och ett prisbasbelopp.
-                        </p>
-                    </div>
                     <Media query="(min-width: 992px)">
                         {matches =>
-                            matches &&
-                            <FlexBox.Item align-self="center" padded="left">
-                                <Image
-                                    src="http://res.cloudinary.com/abyra-se/image/upload/s--URcrLIuw--/c_scale,f_auto,h_400,q_jpegmini:2,w_400/v1496405162/hemsida/aktuellt_small.jpg"
-                                    shape="circular"
-                                    size="medium"
-                                />
-                            </FlexBox.Item>}
+                            matches && (
+                                <FlexBox.Item align-self="center" ml={2}>
+                                    <Image
+                                        src="//images.contentful.com/23egy2u19di5/iwZJTosZnq2CMY4wEUOY2/e43f5474ce026e0de75e041eae5186c9/192.jpg?w=300&h=300&fit=thumb&q=100&fl=progressive"
+                                        shape="circular"
+                                        size="medium"
+                                    />
+                                </FlexBox.Item>
+                            )}
                     </Media>
                 </FlexBox>
             </Page>
@@ -59,11 +36,25 @@ export default class extends React.Component {
     }
 }
 
-export const PageSummary = () =>
+export const query = graphql`
+    query AktuelltPageQuery {
+        page: contentfulPage(id: { eq: "c1WsaJmy164q4UicWwIq2i6" }) {
+            heading
+            content {
+                childMarkdownRemark {
+                    html
+                }
+            }
+        }
+    }
+`;
+
+export const PageSummary = () => (
     <Page.Summary title="Aktuellt" slug="aktuellt">
         <p>
             Till oss är du alltid välkommen att höra av dig. Den första
             kontakten kostar ingenting. Du kan anlita oss för såväl juridisk
             konsultation som biträde vid tvister och avtalsförhandlingar.
         </p>
-    </Page.Summary>;
+    </Page.Summary>
+);
