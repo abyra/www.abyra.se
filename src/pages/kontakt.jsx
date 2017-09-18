@@ -43,7 +43,9 @@ const Map = ({ src, title }) => (
 export default class extends React.Component {
     render() {
         return (
-            <Page title="Kontakt" slug="kontakt">
+            <Page
+                title="Kontakt"
+                bg="//images.contentful.com/23egy2u19di5/2ACPUs55vqgqOCkOYS6S2m/8957dd916a708feb44f22b6f81ee4b55/kontakt.jpg?fl=progressive">
                 <address>
                     <strong>Adriansson Advokatbyrå AB</strong>
                     <p>Box 37, 741 40 Knivsta</p>
