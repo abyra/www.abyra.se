@@ -3,16 +3,15 @@ import { Label, Icon } from "semantic-ui-react";
 import styled from "styled-components";
 
 const InstagramLabel = styled(Label)`
-
     &.ui.label {
-        > .icon{
+        > .icon {
             margin: 0;
-            margin-right: 0.3em
+            margin-right: 0.3em;
         }
     }
 `;
 
-export const Instagram = () =>
+export const Instagram = () => (
     <InstagramLabel
         as="a"
         href="https://www.instagram.com/adrianssonadvokatbyra/"
@@ -20,12 +19,14 @@ export const Instagram = () =>
         rel="noopener">
         <Icon name="instagram" size="large" />
         Följ oss på instagram
-    </InstagramLabel>;
+    </InstagramLabel>
+);
 
-const SocialMediaIcons = props =>
+const SocialMediaIcons = props => (
     <Label.Group {...props}>
         <Instagram />
-    </Label.Group>;
+    </Label.Group>
+);
 
 SocialMediaIcons.defaultProps = {
     size: "large",

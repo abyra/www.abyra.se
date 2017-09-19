@@ -2,8 +2,8 @@ import "../css/abyra.css";
 import React from "react";
 import { SiteHeader, ContactUs, SocialMediaIcons } from "../components";
 import styled from "styled-components";
-import { Container } from "semantic-ui-react";
 import Helmet from "react-helmet";
+import { Container } from "semantic-ui-react";
 
 const Site = styled.div`
     display: flex;
@@ -45,9 +45,7 @@ export default class Template extends React.Component {
                     </Container>
                 </header>
 
-                <Container as="main">
-                    {this.props.children()}
-                </Container>
+                <Container as="main">{this.props.children()}</Container>
 
                 <footer>
                     <ContactUs size="medium" color="black" circular />

@@ -27,3 +27,11 @@ export function slugify(text) {
         .replace(/[^\w\-]+/g, "") // remove all non-word chars
         .replace(/\-\-+/g, "-"); // replace multiple '-' with single '-'
 }
+
+export function encode(data) {
+    return Object.keys(data)
+        .map(
+            key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&");
+}

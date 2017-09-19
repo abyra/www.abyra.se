@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Helmet from "react-helmet";
 import { Segment, Header, Label, Icon } from "semantic-ui-react";
 import Link from "gatsby-link";
+import ContactForm from "./ContactForm";
 
 export const PageWrapper = styled.div`
     background-color: rgba(255, 255, 255, 0.9);
@@ -67,7 +68,21 @@ const Page = ({ title, slug, bg, ...props }) => (
                 <h1>{title}</h1>
             </header>
         </PageHeading>
-        <ContentWrapper>{props.children}</ContentWrapper>
+        <ContentWrapper>
+            <ContactForm
+                onRenderTrigger={({ getTriggerProps }) => (
+                    <Label
+                        {...getTriggerProps()}
+                        ribbon="right"
+                        as="a"
+                        color="blue"
+                        size="medium">
+                        <Icon name="angle double left" /> Kontakta oss
+                    </Label>
+                )}
+            />
+            {props.children}
+        </ContentWrapper>
     </PageWrapper>
 );
 

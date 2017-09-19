@@ -7,10 +7,10 @@ import {
     PageSummary
 } from "../components/Page";
 import { FlexBox, Box } from "../components";
-import { PageSummary as Page2 } from "../pages/aktuellt";
 import Media from "react-media";
-import { Image } from "semantic-ui-react";
+import { Image, Button } from "semantic-ui-react";
 import { slugify } from "../utils";
+import ContactForm from "../components/ContactForm";
 
 const StartPage = styled.div`
     display: flex;
@@ -48,11 +48,27 @@ export default class Index extends React.Component {
                     </StartPageHeading>
                     <ContentWrapper>
                         <FlexBox>
-                            <div
-                                dangerouslySetInnerHTML={{
-                                    __html: content.childMarkdownRemark.html
-                                }}
-                            />
+                            <Box>
+                                <div
+                                    dangerouslySetInnerHTML={{
+                                        __html: content.childMarkdownRemark.html
+                                    }}
+                                />
+                                <Box mt={2}>
+                                    <ContactForm
+                                        onRenderTrigger={({
+                                            getTriggerProps
+                                        }) => (
+                                            <Button
+                                                content="Kontakta oss"
+                                                icon="angle double right"
+                                                labelPosition="right"
+                                                {...getTriggerProps()}
+                                            />
+                                        )}
+                                    />
+                                </Box>
+                            </Box>
                             <Media query="(min-width: 992px)">
                                 {matches =>
                                     matches && (
