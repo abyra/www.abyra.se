@@ -84,12 +84,7 @@ export default class extends React.Component {
                 <Form
                     className="segment attached"
                     success={submitted}
-                    onSubmit={this.submit}
-                    name="contact"
-                    method="post"
-                    data-netlify="true"
-                    data-netlify-honeypot="bot-field">
-                    <input type="hidden" name="form-name" value="contact" />
+                    onSubmit={this.submit}>
                     <Form.Input
                         autoFocus
                         required

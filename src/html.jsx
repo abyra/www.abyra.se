@@ -39,6 +39,16 @@ module.exports = class HTML extends React.Component {
                 </head>
                 <body>
                     {this.props.preBodyComponents}
+                    <form
+                        name="contact"
+                        netlify
+                        netlify-honeypot="bot-field"
+                        hidden>
+                        <input type="text" name="name" />
+                        <input type="email" name="email" />
+                        <input type="text" name="phone" />
+                        <textarea name="message" />
+                    </form>
                     <div
                         key={`body`}
                         id="___gatsby"
