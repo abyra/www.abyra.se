@@ -51,6 +51,16 @@ export default class Template extends React.Component {
                     <ContactUs size="medium" color="black" circular />
                     <SocialMediaIcons size="small" circular />
                 </footer>
+                <form
+                    name="contact"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    hidden>
+                    <input type="text" name="name" />
+                    <input type="email" name="email" />
+                    <input type="text" name="phone" />
+                    <textarea name="message" />
+                </form>
             </Site>
         );
     }
