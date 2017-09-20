@@ -5,7 +5,7 @@ import Link from "gatsby-link";
 import Media from "react-media";
 import styled from "styled-components";
 
-const NavLink = styled(Link)`
+const NavLink = styled(Link) `
     align-self: flex-end;
 `;
 
@@ -59,29 +59,29 @@ const CompactNavigation = ({ ...props }) =>
     </Menu>;
 
 export default () =>
-    <Media query="(max-width: 992px)">
+    <Media query="(min-width: 992px)">
         {matches =>
             matches
-                ? <CompactNavigation>
-                      {main_navigation.map((item, index) =>
-                          <Dropdown.Item
-                              key={index}
-                              as={Link}
-                              to={`/${item.slug}`}>
-                              {item.title}
-                          </Dropdown.Item>
-                      )}
-                  </CompactNavigation>
-                : <Navigation>
-                      {main_navigation.map((item, index) =>
-                          <Menu.Item
-                              key={index}
-                              as={NavLink}
-                              to={`/${item.slug}`}
-                              activeClassName="active"
-                              exact>
-                              {item.title}
-                          </Menu.Item>
-                      )}
-                  </Navigation>}
+                ? <Navigation>
+                    {main_navigation.map((item, index) =>
+                        <Menu.Item
+                            key={index}
+                            as={NavLink}
+                            to={`/${item.slug}`}
+                            activeClassName="active"
+                            exact>
+                            {item.title}
+                        </Menu.Item>
+                    )}
+                </Navigation>
+                : <CompactNavigation>
+                    {main_navigation.map((item, index) =>
+                        <Dropdown.Item
+                            key={index}
+                            as={Link}
+                            to={`/${item.slug}`}>
+                            {item.title}
+                        </Dropdown.Item>
+                    )}
+                </CompactNavigation>}
     </Media>;
