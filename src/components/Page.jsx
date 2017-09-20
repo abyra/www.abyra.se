@@ -72,10 +72,10 @@ const Page = ({ title, slug, bg, ...props }) => (
             <ContactForm
                 onRenderTrigger={({ getTriggerProps }) => (
                     <Label
-                        {...getTriggerProps()}
+                        {...getTriggerProps() }
                         ribbon="right"
                         as="a"
-                        color="blue"
+                        color="black"
                         size="medium">
                         <Icon name="angle double left" /> Kontakta oss
                     </Label>
@@ -93,7 +93,7 @@ export const PageSummary = ({ title, slug, ...props }) => (
                 {title}
             </Header>
             {props.children}
-            <Label ribbon as={Link} to={`/${slug}`} color="blue">
+            <Label ribbon as={Link} to={`/${slug}`} color="black">
                 Läs mer <Icon name="angle double right" />
             </Label>
         </ContentWrapper>
