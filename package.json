@@ -15,12 +15,12 @@
         "react-icons": "^2.2.5",
         "react-media": "^1.6.1",
         "recompose": "^0.25.0",
-        "semantic-ui-react": "^0.71.4",
+        "semantic-ui-react": "^0.73.1",
         "styled-components": "^2.1.2",
         "styled-system": "^1.0.0-13"
     },
     "scripts": {
-        "start": "rm -rf .cache/ && gatsby develop --port=4000",
+        "start": " rm -rf .cache/ && gatsby develop --port=4000",
         "build": "gatsby build",
         "reset": "rm -rf .cache/",
         "test": "echo \"Error: no test specified\" && exit 1"
