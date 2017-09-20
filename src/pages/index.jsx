@@ -41,7 +41,7 @@ export default class Index extends React.Component {
         return (
             <StartPage>
                 <PageWrapper>
-                    <StartPageHeading bg="//images.contentful.com/23egy2u19di5/4mR67VWLJKqgo66OCwGS08/01a3f2f2176a4c90a7e0dae6f2235bab/team_adriansson.jpg?fl=progressive">
+                    <StartPageHeading bg="//images.contentful.com/23egy2u19di5/4mR67VWLJKqgo66OCwGS08/01a3f2f2176a4c90a7e0dae6f2235bab/team_adriansson.jpg?fl=progressive&q=100&w=1200">
                         <header>
                             <h1>{heading}</h1>
                         </header>
@@ -59,13 +59,13 @@ export default class Index extends React.Component {
                                         onRenderTrigger={({
                                             getTriggerProps
                                         }) => (
-                                            <Button
-                                                content="Kontakta oss"
-                                                icon="angle double right"
-                                                labelPosition="right"
-                                                {...getTriggerProps()}
-                                            />
-                                        )}
+                                                <Button
+                                                    content="Kontakta oss"
+                                                    icon="angle double right"
+                                                    labelPosition="right"
+                                                    {...getTriggerProps() }
+                                                />
+                                            )}
                                     />
                                 </Box>
                             </Box>
