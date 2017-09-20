@@ -22,23 +22,20 @@ export default class extends React.Component {
 
     handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
-    submit = async event => {
+    submit = event => {
         event.preventDefault();
 
         const { submitted, visible, ...state } = this.state;
 
-        try {
-            await fetch("/", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded"
-                },
-                body: encode({ "form-name": "contact", ...state })
-            });
+        fetch("/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: encode({ "form-name": "contact", ...state })
+        }).then(() => {
             this.setState({ submitted: !submitted });
-        } catch (exception) {
-            console.log(exception);
-        }
+        });
     };
 
     close = () => {
