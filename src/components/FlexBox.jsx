@@ -5,12 +5,16 @@ import omit from "lodash/omit";
 import withProps from "recompose/withProps";
 import { space, width, removeProps } from "styled-system";
 
-const FlexBox = styled(props => <div {...omit(props, FlexBox.OmitProps)} />)`
+const FlexBox = styled(props => (
+    <div {...omit(removeProps(props), FlexBox.OmitProps)} />
+))`
     display: flex;
     flex-direction: ${props => props.direction};
     align-items: ${props => props["align-items"]};
     justify-content: ${props => props["justify-content"]};
     flex-wrap: ${props => props["wrap"]};
+    ${space};
+    ${width};
 `;
 
 FlexBox.OmitProps = ["direction", "align-items", "justify-content", "wrap"];

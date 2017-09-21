@@ -20,9 +20,9 @@
         "styled-system": "^1.0.0-13"
     },
     "scripts": {
-        "start": " rm -rf .cache/ && gatsby develop --port=4000",
+        "start": "rimraf .cache/ && gatsby develop --port=4000",
         "build": "gatsby build",
-        "reset": "rm -rf .cache/",
+        "reset": "rimraf .cache/",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "devDependencies": {
@@ -34,6 +34,7 @@
         "eslint-plugin-import": "2.2.0",
         "eslint-plugin-jsx-a11y": "5.0.1",
         "eslint-plugin-react": "7.0.1",
-        "prop-types": "^15.5.10"
+        "prop-types": "^15.5.10",
+        "rimraf": "^2.6.2"
     }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Page, FlexBox } from "../components";
+import { Page, FlexBox, Box } from "../components";
 import Media from "react-media";
 import { Image } from "semantic-ui-react";
 
@@ -12,7 +12,8 @@ export default class extends React.Component {
                 title={heading}
                 bg="//images.contentful.com/23egy2u19di5/1b9HVy0DYw82QwAcc6K6Cg/2782f7aeab60e11644865c859e54a517/aktuellt.jpg?fl=progressive">
                 <FlexBox>
-                    <div
+                    <Box
+                        width={3 / 4}
                         dangerouslySetInnerHTML={{
                             __html: content.childMarkdownRemark.html
                         }}
@@ -21,13 +22,12 @@ export default class extends React.Component {
                     <Media query="(min-width: 992px)">
                         {matches =>
                             matches && (
-                                <FlexBox.Item align-self="center" ml={2}>
+                                <Box width={1 / 4} ml={2} my="auto">
                                     <Image
                                         src="//images.contentful.com/23egy2u19di5/iwZJTosZnq2CMY4wEUOY2/e43f5474ce026e0de75e041eae5186c9/192.jpg?w=300&h=300&fit=thumb&q=100&fl=progressive"
                                         shape="circular"
-                                        size="medium"
                                     />
-                                </FlexBox.Item>
+                                </Box>
                             )}
                     </Media>
                 </FlexBox>

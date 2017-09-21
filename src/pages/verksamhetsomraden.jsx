@@ -83,7 +83,7 @@ export default class extends React.Component {
                 title={heading}
                 bg="//images.contentful.com/23egy2u19di5/6HTWOQjBew82YkSuks044K/7a913cdc1ab383fa41524d3d1d3b7e3c/verksamhetsomraden.jpg?fl=progressive">
                 <FlexBox>
-                    <Box>
+                    <Box width={3 / 4}>
                         <Box
                             mb={2}
                             dangerouslySetInnerHTML={{
@@ -108,13 +108,13 @@ export default class extends React.Component {
                     <Media query="(min-width: 992px)">
                         {matches =>
                             matches && (
-                                <FlexBox.Item align-self="center" ml={2}>
+                                <Box width={1 / 4} ml={2} my="auto">
                                     <Image
                                         src="//images.contentful.com/23egy2u19di5/1Z6mDEa9FSMsE6s2CcOwEw/206b624d3088225a837d5810f6e2bb18/IMG_7176.JPG?w=300&h=300&fit=thumb&q=100&fl=progressive"
                                         shape="circular"
                                         size="medium"
                                     />
-                                </FlexBox.Item>
+                                </Box>
                             )}
                     </Media>
                 </FlexBox>

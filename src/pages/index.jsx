@@ -34,6 +34,8 @@ const StartPageHeading = PageHeading.extend`
     }
 `;
 
+const StartPageContentWrapper = styled(ContentWrapper)`position: relative;`;
+
 export default class Index extends React.Component {
     render() {
         const { heading, content, pushers } = this.props.data.page;
@@ -46,45 +48,37 @@ export default class Index extends React.Component {
                             <h1>{heading}</h1>
                         </header>
                     </StartPageHeading>
-                    <ContentWrapper>
-                        <FlexBox>
-                            <Box>
-                                <div
-                                    dangerouslySetInnerHTML={{
-                                        __html: content.childMarkdownRemark.html
-                                    }}
-                                />
-                                <Box mt={2}>
-                                    <ContactForm
-                                        onRenderTrigger={({
-                                            getTriggerProps
-                                        }) => (
-                                                <Button
-                                                    content="Kontakta oss"
-                                                    icon="angle double right"
-                                                    labelPosition="right"
-                                                    {...getTriggerProps() }
-                                                />
-                                            )}
-                                    />
-                                </Box>
-                            </Box>
+                    <StartPageContentWrapper>
+                        <FlexBox mb={2}>
+                            <Box
+                                width={3 / 4}
+                                dangerouslySetInnerHTML={{
+                                    __html: content.childMarkdownRemark.html
+                                }}
+                            />
                             <Media query="(min-width: 992px)">
                                 {matches =>
                                     matches && (
-                                        <FlexBox.Item
-                                            align-self="center"
-                                            ml={2}>
+                                        <Box width={1 / 4} ml={2} my="auto">
                                             <Image
                                                 src="//images.contentful.com/23egy2u19di5/1FjK3Gw6rOEGkYwE08Y0ie/148647f6f795b4d0d8eafc7e0bbe5f26/startpage_small.jpg?w=300&h=300&fit=thumb&q=100&fl=progressive"
                                                 shape="circular"
-                                                size="big"
                                             />
-                                        </FlexBox.Item>
+                                        </Box>
                                     )}
                             </Media>
                         </FlexBox>
-                    </ContentWrapper>
+                        <ContactForm
+                            onRenderTrigger={({ getTriggerProps }) => (
+                                <Button
+                                    content="Kontakta oss"
+                                    icon="angle double right"
+                                    labelPosition="right"
+                                    {...getTriggerProps()}
+                                />
+                            )}
+                        />
+                    </StartPageContentWrapper>
                 </PageWrapper>
 
                 {pushers.map((pusher, index) => (

@@ -8,6 +8,7 @@ import { Container } from "semantic-ui-react";
 const Site = styled.div`
     display: flex;
     min-height: 100vh;
+    height: 100vh;
     flex-direction: column;
 
     > main {
@@ -15,14 +16,14 @@ const Site = styled.div`
     }
 
     > footer {
-        margin-top: 1%;
+        margin-top: 16px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     > header {
-        margin-bottom: 1%;
+        margin-bottom: 16px;
     }
 `;
 
