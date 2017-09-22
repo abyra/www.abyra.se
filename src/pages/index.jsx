@@ -9,7 +9,7 @@ import {
 import { FlexBox, Box } from "../components";
 import Media from "react-media";
 import { Image, Button } from "semantic-ui-react";
-import { slugify } from "../utils";
+import slugify from "slugify";
 import ContactForm from "../components/ContactForm";
 
 const StartPage = styled.div`
@@ -85,7 +85,7 @@ export default class Index extends React.Component {
                     <PageSummary
                         key={index}
                         title={pusher.heading}
-                        slug={slugify(pusher.heading)}>
+                        slug={slugify(pusher.heading, { lower: true })}>
                         <Box
                             pb={2}
                             dangerouslySetInnerHTML={{
