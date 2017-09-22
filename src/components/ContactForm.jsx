@@ -1,3 +1,4 @@
+import "whatwg-fetch";
 import React from "react";
 import { Button, Form, Message, Modal } from "semantic-ui-react";
 import { encode } from "../utils";

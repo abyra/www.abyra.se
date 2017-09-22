@@ -17,7 +17,8 @@
         "recompose": "^0.25.0",
         "semantic-ui-react": "^0.73.1",
         "styled-components": "^2.1.2",
-        "styled-system": "^1.0.0-13"
+        "styled-system": "^1.0.0-13",
+        "whatwg-fetch": "^2.0.3"
     },
     "scripts": {
         "start": "rimraf .cache/ && gatsby develop --port=4000",
