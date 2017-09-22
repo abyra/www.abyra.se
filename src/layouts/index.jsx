@@ -8,11 +8,10 @@ import { Container } from "semantic-ui-react";
 const Site = styled.div`
     display: flex;
     min-height: 100vh;
-    height: 100vh;
     flex-direction: column;
 
     > main {
-        flex: 1;
+        flex: 1 0 auto;
     }
 
     > footer {
