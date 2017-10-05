@@ -34,7 +34,7 @@ export default class extends React.Component {
                                     </Text>
                                 </Item.Meta>
                                 <Item.Description>
-                                    <Label.Group size="large" color="blue">
+                                    <Label.Group size="large" color="black">
                                         <Label
                                             as="a"
                                             href={`mailto:${person.email}`}>

@@ -49,7 +49,7 @@ export default class extends React.Component {
                 <address>
                     <strong>Adriansson Advokatbyrå AB</strong>
                     <p>Box 37, 741 40 Knivsta</p>
-                    <Label.Group size="large" color="blue">
+                    <Label.Group size="large" color="black">
                         <Label as="a" href={`mailto:info@abyra.se`}>
                             <Icon name="mail" />
                             info@abyra.se
