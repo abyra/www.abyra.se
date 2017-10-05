@@ -5,9 +5,7 @@ import Link from "gatsby-link";
 import Media from "react-media";
 import styled from "styled-components";
 
-const NavLink = styled(Link) `
-    align-self: flex-end;
-`;
+const NavLink = styled(Link)`align-self: flex-end;`;
 
 const main_navigation = [
     {
@@ -32,7 +30,7 @@ const main_navigation = [
     }
 ];
 
-const Navigation = ({ ...props }) =>
+const Navigation = ({ ...props }) => (
     <Menu borderless size="large">
         <Menu.Item>
             <Link to="/">
@@ -40,9 +38,10 @@ const Navigation = ({ ...props }) =>
             </Link>
         </Menu.Item>
         {props.children}
-    </Menu>;
+    </Menu>
+);
 
-const CompactNavigation = ({ ...props }) =>
+const CompactNavigation = ({ ...props }) => (
     <Menu borderless>
         <Menu.Item>
             <Link to="/">
@@ -51,37 +50,39 @@ const CompactNavigation = ({ ...props }) =>
         </Menu.Item>
         <Menu.Menu position="right">
             <Dropdown item pointing icon="bars">
-                <Dropdown.Menu>
-                    {props.children}
-                </Dropdown.Menu>
+                <Dropdown.Menu>{props.children}</Dropdown.Menu>
             </Dropdown>
         </Menu.Menu>
-    </Menu>;
+    </Menu>
+);
 
-export default () =>
+export default () => (
     <Media query="(min-width: 992px)">
         {matches =>
-            matches
-                ? <Navigation>
-                    {main_navigation.map((item, index) =>
+            matches ? (
+                <Navigation>
+                    {main_navigation.map((item, index) => (
                         <Menu.Item
                             key={index}
                             as={NavLink}
                             to={`/${item.slug}`}
                             activeClassName="active"
                             exact>
-                            {item.title}
+                            {item.title.toLocaleUpperCase()}
                         </Menu.Item>
-                    )}
+                    ))}
                 </Navigation>
-                : <CompactNavigation>
-                    {main_navigation.map((item, index) =>
+            ) : (
+                <CompactNavigation>
+                    {main_navigation.map((item, index) => (
                         <Dropdown.Item
                             key={index}
                             as={Link}
                             to={`/${item.slug}`}>
-                            {item.title}
+                            {item.title.toLocaleUpperCase()}
                         </Dropdown.Item>
-                    )}
-                </CompactNavigation>}
-    </Media>;
+                    ))}
+                </CompactNavigation>
+            )}
+    </Media>
+);
